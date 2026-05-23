@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acortador de URLs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🔗 Acortador de URLs</h1>
+            <p class="subtitle">Acorta tus URLs largas de forma rápida y sencilla</p>
+            
+            <form id="shortenForm">
+                <div class="form-group">
+                    <label for="longUrl">URL larga:</label>
+                    <input 
+                        type="url" 
+                        id="longUrl" 
+                        name="longUrl" 
+                        placeholder="https://ejemplo.com/url-muy-larga"
+                        required
+                    >
+                </div>
+                <button type="submit" id="submitBtn" class="btn-primary">
+                    <span class="btn-text">Acortar URL</span>
+                    <span class="btn-loading" style="display: none;">Acortando...</span>
+                </button>
+            </form>
+
+            <div id="resultContainer" class="result-container" style="display: none;">
+                <div class="success-message">
+                    <span class="success-icon">✓</span>
+                    <span>URL acortada exitosamente</span>
+                </div>
+                <div class="result-box">
+                    <input type="text" id="shortUrl" readonly class="result-input">
+                    <button id="copyBtn" class="btn-copy" title="Copiar al portapapeles">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copiar
+                    </button>
+                </div>
+            </div>
+
+            <div id="errorContainer" class="error-container" style="display: none;">
+                <div class="error-message">
+                    <span class="error-icon">✕</span>
+                    <span id="errorMessage">Error al acortar la URL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
